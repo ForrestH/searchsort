@@ -1,0 +1,4 @@
+Plan for Sunday:
+1. Finish learning and implementing Quicksort and Radix-Sort
+2. Study search algorithms and implement some
+3. Use Google Test Framework for test cases
