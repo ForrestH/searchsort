@@ -12,6 +12,9 @@ namespace Sorting
     public:
         virtual vector<int> sort(vector<int> list) override
         {
+            int n = list.size();
+            left.reserve(n / 2 + 1);
+            right.reserve(n / 2 + 1);
             vector<int> out(list);
             mergeSort(out, 0, out.size() - 1);
             return out;
@@ -35,10 +38,8 @@ namespace Sorting
         {
             int sizeLeft = M - L;
             int sizeRight = R - M + 1;
-            vector<int> left;
-            left.reserve(sizeLeft);
-            vector<int> right;
-            right.reserve(sizeRight);
+            left.clear();
+            right.clear();
             
             // Create temporary left and right lists
             for (int i = L; i <= R; ++i)
@@ -77,6 +78,9 @@ namespace Sorting
                 list[outIdx++] = right[rightIdx++];
             }
         }
+        
+        vector<int> left;
+        vector<int> right;
     };
 }
 
